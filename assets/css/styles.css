@@ -12,13 +12,14 @@
         Blue: hsl(207, 90%, 72%)
         Pink: hsl(356, 66%, 75%)
         Teal: hsl(174, 63%, 62%)
+        Lila: hsl(250, 66%, 75%) & first-color-alt: hsl(250, 66%, 71%)
   */
-  --first-hue: 250;
-  --sat: 66%;
-  --lig: 75%;
+  --first-hue: 207;
+  --sat: 90%;
+  --lig: 72%;
   --second-hue: 219;
   --first-color: hsl(var(--first-hue), var(--sat), var(--lig));
-  --first-color-alt: hsl(var(--first-hue), var(--sat), 71%); /* -4% */
+  --first-color-alt: hsl(var(--first-hue), var(--sat), 67%); /* -4% */
   --title-color: hsl(var(--second-hue), 15%, 95%);
   --text-color: hsl(var(--second-hue), 8%, 75%);
   --text-color-light: hsl(var(--second-hue), 4%, 55%);
@@ -132,6 +133,8 @@ body.light-theme {
   --text-color: hsl(var(--second-hue), 8%, 35%);
   --body-color: hsl(var(--second-hue), 100%, 99%);
   --container-color: #fff;
+  --footer-bg-color: hsl(var(--second-hue), 100%, 99%);
+  --footer-text-color: hsl(var(--second-hue), 100%, 99%);
 }
 
 /*========== 
@@ -178,8 +181,13 @@ body.light-theme {
 .light-theme .services__card,
 .light-theme .work__card,
 .light-theme .testimonial__card,
-.light-theme .contact__card {
+.light-theme .contact__card,
+.light-theme .footer__container {
   box-shadow: 0 2px 16px hsla(var(--second-hue), 48%, 8%, 0.1);
+}
+
+.light-theme .footer__link {
+  box-shadow: 0 2px 16px hsla(var(--second-hue), 48%, 8%, 0.25);
 }
 
 .light-theme::-webkit-scrollbar {
@@ -250,6 +258,7 @@ body.light-theme {
 
 .nav__logo {
   color: var(--first-color);
+  font-size: 1.5rem;
   font-weight: var(--font-medium);
   transition: 0.4s;
 }
@@ -365,17 +374,21 @@ body.light-theme {
 
 .home__handle {
   justify-self: center;
-  width: 160px;
+  /*width: 160px;
   height: 276px;
-  border-radius: 10rem 10rem 1rem 1rem;
-  -webkit-border-radius: 10rem 10rem 1rem 1rem;
-  -moz-border-radius: 10rem 10rem 1rem 1rem;
-  -ms-border-radius: 10rem 10rem 1rem 1rem;
-  -o-border-radius: 10rem 10rem 1rem 1rem;
+  */ /*border-radius: 10rem 10rem 1rem 1rem;
+  -webkit-border-radius:;
+  -moz-border-radius:;
+  -ms-border-radius:;
+  -o-border-radius:;*/
   display: flex;
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
+}
+
+.home__img {
+  border-radius: 1.5rem;
 }
 
 .home__buttons {
@@ -949,7 +962,8 @@ body.light-theme {
 
 /*=============== FOOTER ===============*/
 .footer {
-  background-color: var(--first-color);
+  /* background-color: var(--first-color); */
+  background-color: var(--footer-bg-color);
 }
 
 .footer__container {
@@ -958,12 +972,14 @@ body.light-theme {
 
 .footer__title,
 .footer__link {
-  color: var(--body-color);
+  /* color: var(--body-color); */
+  color: var(--first-color);
 }
 
 .footer__title {
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 .footer__list {
@@ -971,6 +987,16 @@ body.light-theme {
   justify-content: center;
   column-gap: 1.5rem;
   margin-bottom: 2rem;
+}
+
+.footer__link {
+  padding: 5px;
+  border-radius: 3px;
+  background-color: var(--container-color);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
 }
 
 .footer__social {
@@ -996,14 +1022,15 @@ body.light-theme {
 .footer__copy {
   display: block;
   margin-top: 4.5rem;
-  color: var(--container-color);
+  /* color: var(--container-color); */
+  color: var(--first-color);
   text-align: center;
-  font-size: var(--small-font-size);
+  font-size: var(--smaller-font-size);
 }
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
-  width: 0.6rem;
+  width: 0.8rem;
   background-color: hsl(var(--second-hue), 8%, 38%);
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
